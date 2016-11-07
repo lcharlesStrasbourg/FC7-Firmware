@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "fc7_mmc", "fc7_mmc.cppproj", "{AF1FB0AD-1850-4785-B86B-83CAD3568A1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugFC7|AVR = DebugFC7|AVR
+		RunFC7|AVR = RunFC7|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF1FB0AD-1850-4785-B86B-83CAD3568A1B}.DebugFC7|AVR.ActiveCfg = DebugFC7|AVR
+		{AF1FB0AD-1850-4785-B86B-83CAD3568A1B}.DebugFC7|AVR.Build.0 = DebugFC7|AVR
+		{AF1FB0AD-1850-4785-B86B-83CAD3568A1B}.RunFC7|AVR.ActiveCfg = RunFC7|AVR
+		{AF1FB0AD-1850-4785-B86B-83CAD3568A1B}.RunFC7|AVR.Build.0 = RunFC7|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

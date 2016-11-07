@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC32.CPP</ToolchainName>
+    <ProjectGuid>af1fb0ad-1850-4785-b86b-83cad3568a1b</ProjectGuid>
+    <Name>fc7_mmc</Name>
+    <avrdevice>AT32uc3a3256</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <AvrProjectType>Importer</AvrProjectType>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>fc7_mmc</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <avrtool>com.atmel.avrdbg.tool.jtagice3plus</avrtool>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.11.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <com_atmel_avrdbg_tool_jtagice3plus>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDbgClock>7500000</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.jtagice3plus</ToolType>
+      <ToolNumber>J30200028353</ToolNumber>
+      <ToolName>JTAGICE3</ToolName>
+    </com_atmel_avrdbg_tool_jtagice3plus>
+    <preserveEEPROM>true</preserveEEPROM>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'RunFC7' ">
+    <ToolchainSettings>
+      <Avr32GccCpp>
+        <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+        <avr32gcc.common.outputfiles.lss>False</avr32gcc.common.outputfiles.lss>
+        <avr32gcc.common.outputfiles.eep>False</avr32gcc.common.outputfiles.eep>
+        <avr32gcc.common.outputfiles.srec>False</avr32gcc.common.outputfiles.srec>
+        <avr32gcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>FC7_REV=0</Value>
+          </ListValues>
+        </avr32gcc.compiler.symbols.DefSymbols>
+        <avr32gcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../include/imperial_mmc/fc7/r2</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/DRIVERS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/include</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE</Value>
+          </ListValues>
+        </avr32gcc.compiler.directories.IncludePaths>
+        <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
+        <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+        <avr32gcc.compiler.miscellaneous.OtherFlags>-c -fmessage-length=0</avr32gcc.compiler.miscellaneous.OtherFlags>
+        <avr32gcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>FC7_REV=0</Value>
+          </ListValues>
+        </avr32gcccpp.compiler.symbols.DefSymbols>
+        <avr32gcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../include/imperial_mmc/fc7/r2</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/DRIVERS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/include</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE</Value>
+          </ListValues>
+        </avr32gcccpp.compiler.directories.IncludePaths>
+        <avr32gcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcccpp.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcccpp.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcccpp.compiler.optimization.DebugLevel>
+        <avr32gcccpp.compiler.warnings.AllWarnings>True</avr32gcccpp.compiler.warnings.AllWarnings>
+        <avr32gcccpp.compiler.miscellaneous.OtherFlags>-c -fmessage-length=0</avr32gcccpp.compiler.miscellaneous.OtherFlags>
+        <avr32gcccpp.linker.general.DoNotUseStandardStartFiles>True</avr32gcccpp.linker.general.DoNotUseStandardStartFiles>
+        <avr32gcccpp.linker.optimization.GarbageCollectUnusedSections>True</avr32gcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <avr32gcccpp.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcccpp.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avr32gcccpp.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcccpp.linker.optimization.AllowDirectReferencesToDataSection>
+        <avr32gcccpp.assembler.debugging.DebugLevel>Default (-g)</avr32gcccpp.assembler.debugging.DebugLevel>
+        <avr32gcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+          </ListValues>
+        </avr32gcccpp.preprocessingassembler.general.IncludePaths>
+        <avr32gcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcccpp.preprocessingassembler.debugging.DebugLevel>
+      </Avr32GccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugFC7' ">
+    <ToolchainSettings>
+      <Avr32GccCpp>
+        <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+        <avr32gcc.common.outputfiles.lss>False</avr32gcc.common.outputfiles.lss>
+        <avr32gcc.common.outputfiles.eep>False</avr32gcc.common.outputfiles.eep>
+        <avr32gcc.common.outputfiles.srec>False</avr32gcc.common.outputfiles.srec>
+        <avr32gcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+            <Value>FC7_REV=0</Value>
+          </ListValues>
+        </avr32gcc.compiler.symbols.DefSymbols>
+        <avr32gcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../include/imperial_mmc/fc7/r2</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/DRIVERS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/include</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE</Value>
+          </ListValues>
+        </avr32gcc.compiler.directories.IncludePaths>
+        <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
+        <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+        <avr32gcc.compiler.miscellaneous.OtherFlags>-c -fmessage-length=0</avr32gcc.compiler.miscellaneous.OtherFlags>
+        <avr32gcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>FC7_REV=0</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avr32gcccpp.compiler.symbols.DefSymbols>
+        <avr32gcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../include/imperial_mmc/fc7/r2</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/DRIVERS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/include</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE</Value>
+          </ListValues>
+        </avr32gcccpp.compiler.directories.IncludePaths>
+        <avr32gcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcccpp.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcccpp.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcccpp.compiler.optimization.DebugLevel>
+        <avr32gcccpp.compiler.warnings.AllWarnings>True</avr32gcccpp.compiler.warnings.AllWarnings>
+        <avr32gcccpp.compiler.miscellaneous.OtherFlags>-c -fmessage-length=0</avr32gcccpp.compiler.miscellaneous.OtherFlags>
+        <avr32gcccpp.linker.general.DoNotUseStandardStartFiles>True</avr32gcccpp.linker.general.DoNotUseStandardStartFiles>
+        <avr32gcccpp.linker.optimization.GarbageCollectUnusedSections>True</avr32gcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <avr32gcccpp.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcccpp.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avr32gcccpp.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcccpp.linker.optimization.AllowDirectReferencesToDataSection>
+        <avr32gcccpp.assembler.debugging.DebugLevel>Default (-g)</avr32gcccpp.assembler.debugging.DebugLevel>
+        <avr32gcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS</Value>
+            <Value>../../../../../../../cactus/tags/ic_mmc/ic_mmc_v1_6_4/imperial_mmc/atmel/UTILS/PREPROCESSOR</Value>
+          </ListValues>
+        </avr32gcccpp.preprocessingassembler.general.IncludePaths>
+        <avr32gcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcccpp.preprocessingassembler.debugging.DebugLevel>
+      </Avr32GccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\README.txt">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\README.txt</Link>
+    </None>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\ASM\trampoline.x">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\ASM\trampoline.x</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\adc.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\adc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\adc.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\adc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\cdc.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\cdc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\conf_access.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\conf_access.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\conf_explorer.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\conf_explorer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\conf_sd_mmc_mci.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\conf_sd_mmc_mci.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\conf_usb.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\conf_usb.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\ctrl_access.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\ctrl_access.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\ctrl_access.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\ctrl_access.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\cycle_counter.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\cycle_counter.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\exception.x">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\exception.x</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\flashc.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\flashc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\flashc.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\flashc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\gpio.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\gpio.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\gpio.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\gpio.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\intc.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\intc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\intc.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\intc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\mci.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\mci.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\mci.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\mci.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\pm.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\pm.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\pm.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\pm.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\sd_mmc_cmd.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\sd_mmc_cmd.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\sd_mmc_mci.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\sd_mmc_mci.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\sd_mmc_mci.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\sd_mmc_mci.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\sd_mmc_mci_mem.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\sd_mmc_mci_mem.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\sd_mmc_mci_mem.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\sd_mmc_mci_mem.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\spi.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\spi.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\spi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\tc.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\tc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\tc.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\tc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\twim.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\twim.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\twim.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\twim.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\twis.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\twis.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\twis.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\twis.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\uart_usb_lib.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\uart_usb_lib.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\uart_usb_lib.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\uart_usb_lib.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usart.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usart.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usbb.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usbb.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_descriptors.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_descriptors.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_descriptors.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_descriptors.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_device_task.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_device_task.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_device_task.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_device_task.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_drv.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_drv.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_drv.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_drv.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_ids.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_ids.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_specific_request.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_specific_request.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_specific_request.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_specific_request.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_standard_request.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_standard_request.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_standard_request.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_standard_request.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_task.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_task.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\usb_task.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\usb_task.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\wdt.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\wdt.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\DRIVERS\wdt.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\DRIVERS\wdt.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\compiler.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\compiler.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\conf_isp.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\conf_isp.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\parts.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\parts.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_cpu.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_cpu.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_exceptions.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_exceptions.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_interrupts.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_interrupts.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_io.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_io.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_usart.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_usart.h</Link>
+    </Compile>
+    <None Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\AT32UC3A3\256\GCC\link_uc3a3256.lds">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\AT32UC3A3\256\GCC\link_uc3a3256.lds</Link>
+    </None>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\PREPROCESSOR\mrepeat.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\PREPROCESSOR\mrepeat.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\PREPROCESSOR\preprocessor.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\PREPROCESSOR\preprocessor.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\PREPROCESSOR\stringz.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\PREPROCESSOR\stringz.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\PREPROCESSOR\tpaste.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\PREPROCESSOR\tpaste.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\atmel\UTILS\STARTUP_FILES\GCC\crt0.x">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\atmel\UTILS\STARTUP_FILES\GCC\crt0.x</Link>
+    </Compile>
+    <None Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\externs\atmel-headers-6.1.3.1475.zip">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\externs\atmel-headers-6.1.3.1475.zip</Link>
+    </None>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_arch.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_arch.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_buffer.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_buffer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_crateid.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_crateid.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_cms.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_cms.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_debug.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_debug.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_dma_handlers.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_dma_handlers.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_dma_pipe.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_dma_pipe.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_sensors.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_sensors.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_fpga.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_fpga.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_fru.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_fru.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_i2c.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_i2c.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_ipbus.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_ipbus.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_ipmi.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_ipmi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_led.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_led.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_oem.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_oem.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_prng.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_prng.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_pwr.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_pwr.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_sd.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_sd.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_sdr.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_sdr.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_sfwfs.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_sfwfs.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_sha1.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_sha1.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_spi.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_spi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_timer.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_timer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_usb.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_usb.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\avr32_usb_cmd.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\avr32_usb_cmd.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\include\imperial_mmc\version.h">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\include\imperial_mmc\version.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32mmc_main.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32mmc_main.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_buffer.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_buffer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_crateid.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_crateid.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_cms.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_cms.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_debug.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_debug.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_dma_handlers.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_dma_handlers.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_dma_pipe.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_dma_pipe.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_sensors.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_sensors.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_fpga.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_fpga.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_fru.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_fru.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_i2c.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_i2c.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_ipbus.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_ipbus.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_ipmi.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_ipmi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_led.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_led.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_oem.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_oem.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_prng.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_prng.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_pwr.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_pwr.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_sd.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_sd.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_sdr.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_sdr.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_sfwfs.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_sfwfs.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_sha1.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_sha1.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_spi.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_timer.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_timer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_usb.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_usb.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\..\cactus\tags\ic_mmc\ic_mmc_v1_6_4\imperial_mmc\src\common\avr32_usb_cmd.c">
+      <SubType>compile</SubType>
+      <Link>imperial_mmc\src\common\avr32_usb_cmd.c</Link>
+    </Compile>
+    <Folder Include="imperial_mmc\" />
+    <Folder Include="imperial_mmc\atmel\" />
+    <Folder Include="imperial_mmc\atmel\ASM\" />
+    <Folder Include="imperial_mmc\atmel\DRIVERS\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LIBS\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\AT32UC3A3\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\AT32UC3A3\256\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\LINKER_SCRIPTS\AT32UC3A3\256\GCC\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\PREPROCESSOR\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\STARTUP_FILES\" />
+    <Folder Include="imperial_mmc\atmel\UTILS\STARTUP_FILES\GCC\" />
+    <Folder Include="imperial_mmc\externs\" />
+    <Folder Include="imperial_mmc\include\" />
+    <Folder Include="imperial_mmc\include\imperial_mmc\" />
+    <Folder Include="imperial_mmc\src\" />
+    <Folder Include="imperial_mmc\src\common\" />
+    <Folder Include="src" />
+    <Folder Include="src\fc7" />
+    <Folder Include="src\fc7\r2" />
+    <Folder Include="include" />
+    <Folder Include="include\imperial_mmc" />
+    <Folder Include="include\imperial_mmc\fc7" />
+    <Folder Include="include\imperial_mmc\fc7\r2" />
+    <Compile Include="src\fc7\r2\avr32_arch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\fc7\r2\avr32_user.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\imperial_mmc\fc7\r2\board.arch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\imperial_mmc\fc7\r2\board.fru.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\imperial_mmc\fc7\r2\board.sdr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\imperial_mmc\fc7\r2\board.sensors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\imperial_mmc\fc7\r2\board.user.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
