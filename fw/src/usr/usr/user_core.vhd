@@ -149,7 +149,7 @@ architecture usr of user_core is
     --===================================--
     -- Constant definition
     --===================================--
-    constant NUM_MODULES            : integer := 1;
+    constant NUM_HYBRIDS            : integer := 1;
     --===================================--
     
     --===================================--
@@ -182,7 +182,7 @@ begin
     --===================================--	
     
     --===================================--
-    -- Block responsible for I2C command processing. Is connected to: fast command block, modules.
+    -- Block responsible for I2C command processing. Is connected to: fast command block, hybrids.
     --===================================--
     command_processor_block: entity work.command_processor_core;
     --===================================--
@@ -195,7 +195,7 @@ begin
     --===================================--    
     
     --===================================--
-    -- Fast commands. Connected to: physical interface, modules.
+    -- Fast commands. Connected to: physical interface, hybrids.
     --===================================--
     fast_command_block: entity work.fast_command_core;
     --===================================--
@@ -208,11 +208,11 @@ begin
     --===================================-- 
     
     --===================================--
-    -- Modules generation
+    -- Hybrids generation
     --===================================--   
-    MOD_GEN : FOR module_i IN 1 TO NUM_MODULES GENERATE
+    HYB_GEN : FOR hybrid_i IN 1 TO NUM_HYBRIDS GENERATE
     --===================================--
-    module_block: entity work.module_core;
+    hybrid_block: entity work.hybrid_core;
     --===================================--
     --generic map
     --(
@@ -221,11 +221,11 @@ begin
     --(
     --);        
     --===================================--
-    END GENERATE;
+    END GENERATE HYB_GEN;
     --===================================--    
     
     --===================================--
-    -- Physical interface layer. Connected to: modules (40mhz lines + I2C lines), fast commands, FMC 1&2
+    -- Physical interface layer. Connected to: hybrids (40mhz lines + I2C lines), fast commands, FMC 1&2
     --===================================--
     phy_block: entity work.phy_core;
     --===================================--
@@ -238,7 +238,7 @@ begin
     --===================================--
     
     --===================================--
-    -- BE Data Buffer - Contains Global Event Builder. Connected to: modules
+    -- BE Data Buffer - Contains Global Event Builder. Connected to: hybrids
     --===================================--
     be_data_buffer_block: entity work.be_data_buffer_core;
     --===================================--

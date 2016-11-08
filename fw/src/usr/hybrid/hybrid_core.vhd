@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 11/08/2016 12:52:31 PM
 -- Design Name: 
--- Module Name: module_core - rtl
+-- Module Name: hybrid_core - rtl
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,11 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity module_core is
+entity hybrid_core is
 --  Port ( );
-end module_core;
+end hybrid_core;
 
-architecture rtl of module_core is
+architecture rtl of hybrid_core is
 
     signal dummy_signal             : std_logic := '0';
 
