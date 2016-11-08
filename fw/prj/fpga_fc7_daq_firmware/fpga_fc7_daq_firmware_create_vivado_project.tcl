@@ -104,7 +104,7 @@
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/sys/i2c/i2c_eep_autoread.vhd"
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/sys/i2c/i2c_master_top.vhd"
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/usr/user_core.vhd"
-#    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/module/module_core.vhd"
+#    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/hybrid/hybrid_core.vhd"
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/fast_command/fast_command_core.vhd"
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/command_processor/command_processor_core.vhd"
 #    "/home/harankom/Soft/Xilinx/Projects/FC7-Firmware/fw/src/usr/clock_generator/clock_generator_core.vhd"
@@ -171,7 +171,7 @@ if { $::argc > 0 } {
 set orig_proj_dir "[file normalize "$origin_dir/fpga_fc7_daq_firmware"]"
 
 # Create project
-create_project fpga_fc7_daq_firmware ./fpga_fc7_daq_firmware -part xc7k420tffg1156-2
+create_project -force fpga_fc7_daq_firmware ./fpga_fc7_daq_firmware -part xc7k420tffg1156-2
 
 # Set the directory path for the new project
 set proj_dir [get_property directory [current_project]]
@@ -294,7 +294,7 @@ set files [list \
  "[file normalize "$origin_dir/../../src/sys/i2c/i2c_eep_autoread.vhd"]"\
  "[file normalize "$origin_dir/../../src/sys/i2c/i2c_master_top.vhd"]"\
  "[file normalize "$origin_dir/../../src/usr/usr/user_core.vhd"]"\
- "[file normalize "$origin_dir/../../src/usr/module/module_core.vhd"]"\
+ "[file normalize "$origin_dir/../../src/usr/hybrid/hybrid_core.vhd"]"\
  "[file normalize "$origin_dir/../../src/usr/fast_command/fast_command_core.vhd"]"\
  "[file normalize "$origin_dir/../../src/usr/command_processor/command_processor_core.vhd"]"\
  "[file normalize "$origin_dir/../../src/usr/clock_generator/clock_generator_core.vhd"]"\
@@ -1228,7 +1228,7 @@ set_property "used_in" "synthesis simulation" $file_obj
 set_property "used_in_simulation" "1" $file_obj
 set_property "used_in_synthesis" "1" $file_obj
 
-set file "$origin_dir/../../src/usr/module/module_core.vhd"
+set file "$origin_dir/../../src/usr/hybrid/hybrid_core.vhd"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property "file_type" "VHDL" $file_obj
