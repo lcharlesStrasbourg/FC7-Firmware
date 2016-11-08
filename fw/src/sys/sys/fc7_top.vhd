@@ -356,7 +356,7 @@ port map
 
 
 --==============================--
-usr: entity work.user_logic
+usr: entity work.user_core
 --==============================--
 port map
 (

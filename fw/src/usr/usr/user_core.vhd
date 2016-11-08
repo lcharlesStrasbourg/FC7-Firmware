@@ -12,7 +12,7 @@ use work.user_version_package.all;
 library unisim;
 use unisim.vcomponents.all;
 
-entity user_logic is 
+entity user_core is 
 port
 (
 
@@ -142,139 +142,113 @@ port
     rarp_en_o                       : out   std_logic;
     use_i2c_eeprom_o                : out   std_logic
 );
-end user_logic;
+end user_core;
 
-architecture usr of user_logic is
+architecture usr of user_core is
 
-	signal ipb_clk					: std_logic;
+    --===================================--
+    -- Constant definition
+    --===================================--
+    constant NUM_MODULES            : integer := 1;
+    --===================================--
     
+    --===================================--
+    -- Signal definition
+    --===================================--
     signal fabric_clk_pre_buf       : std_logic;                
     signal fabric_clk               : std_logic;
-    
-    signal ctrl_reg		            : array_32x32bit;
-	signal stat_reg		            : array_32x32bit;
-
-    signal cdce_pri_clk_bufg        : std_logic;
-
-    signal cdce_sync_from_ipb       : std_logic;     
-    signal cdce_sel_from_ipb        : std_logic;                    
-    signal cdce_pwrdown_from_ipb    : std_logic;
-    signal cdce_ctrl_from_ipb       : std_logic;  
---  signal cdce_sel_from_fabric     : std_logic;                    
---  signal cdce_pwrdown_from_fabric : std_logic;
---  signal cdce_ctrl_from_fabric    : std_logic; 
-
+    --===================================--
 
 begin
 
-	--===========================================--
-	-- ipbus management
-	--===========================================--
-	ipb_clk 		      <= clk_31_250_bufg_i; 	-- select the frequency of the ipbus clock 
-	ipb_clk_o 	          <= ipb_clk;				-- always forward the selected ipb_clk to system core
-    --
-	ip_addr_o 	          <= x"c0_a8_00_50";
-	mac_addr_o	          <= x"aa_bb_cc_dd_ee_50";
-	rarp_en_o 		      <= '1';
-	use_i2c_eeprom_o      <= '1';
-	--===========================================--
-
-
     --===========================================--
-	-- other clocks 
-	--===========================================--
-	fclk_ibuf:      ibufgds     port map (i => fabric_clk_p, ib => fabric_clk_n, o => fabric_clk_pre_buf);
+    -- other clocks
+    --===========================================--
+    fclk_ibuf:      ibufgds     port map (i => fabric_clk_p, ib => fabric_clk_n, o => fabric_clk_pre_buf);
     fclk_bufg:      bufg        port map (i => fabric_clk_pre_buf,               o => fabric_clk);
-	--===========================================--
-        
-
+    --===========================================--
 
     --===================================--
-    cdce_synch: entity work.cdce_synchronizer
+    -- Block responsible for clock generation
     --===================================--
-    generic map
-    (    
-        pwrdown_delay     => 1000,
-        sync_delay        => 1000000    
-    )
-    port map
-    (    
-        reset_i           => ipb_rst_i,
-        ------------------
-        ipbus_ctrl_i      => not cdce_ctrl_from_ipb,          -- default: 1 (ipb controlled) 
-        ipbus_sel_i       =>     cdce_sel_from_ipb,           -- default: 0 (select secondary clock)
-        ipbus_pwrdown_i   => not cdce_pwrdown_from_ipb,       -- default: 1 (powered up)
-        ipbus_sync_i      => not cdce_sync_from_ipb,          -- default: 1 (disable sync mode), rising edge needed to resync
-        ------------------                                                                       
-        user_sel_i        => '1', -- cdce_sel_from_fabric     -- effective only when ipbus_ctrl_i = '0'            
-        user_pwrdown_i    => '1', -- cdce_pwrdown_from_fabric -- effective only when ipbus_ctrl_i = '0'
-        user_sync_i       => '1', -- cdce_sync_from_fabric    -- effective only when ipbus_ctrl_i = '0'  
-        ------------------
-        pri_clk_i         => cdce_pri_clk_bufg,
-        sec_clk_i         => fabric_clk,         -- copy of what is actually send to the secondary clock input
-        pwrdown_o         => cdce_pwrdown_o,
-        sync_o            => cdce_sync_o,
-        ref_sel_o         => cdce_ref_sel_o,    
-        sync_clk_o        => cdce_sync_clk_o
-    );
-        
-        cdce_pri_clk_bufg_o <= cdce_pri_clk_bufg; cdce_pri_clk_bufg   <= '0'; -- [note: in this example, the cdce_pri_clk_bufg is not used]
+    clock_generator_block: entity work.clock_generator_core;
     --===================================--
-
-	
-	
-	--===========================================--
-	stat_regs_inst: entity work.ipb_user_status_regs
-	--===========================================--
-	port map
-	(
-		clk					=> ipb_clk,
-		reset				=> ipb_rst_i,
-		ipb_mosi_i			=> ipb_mosi_i(user_ipb_stat_regs),
-		ipb_miso_o			=> ipb_miso_o(user_ipb_stat_regs),
-		regs_i				=> stat_reg
-	);
-	--===========================================--
-
-
-
-	--===========================================--
-	ctrl_regs_inst: entity work.ipb_user_control_regs
-	--===========================================--
-	port map
-	(
-		clk					=> ipb_clk,
-		reset				=> ipb_rst_i,
-		ipb_mosi_i			=> ipb_mosi_i(user_ipb_ctrl_regs),
-		ipb_miso_o			=> ipb_miso_o(user_ipb_ctrl_regs),
-		regs_o				=> ctrl_reg
-	);
-	--===========================================--
-		
-
-
-   --===========================================--
-	-- example register mapping
-	--===========================================--
-									stat_reg(0)					<= usr_id_0;
-									stat_reg(1)					<= x"0000_0000";
-									stat_reg(2)					<= firmware_id;
-									
-	usrled1_r				<= not ctrl_reg(0)(0);
-	usrled1_g				<= not ctrl_reg(0)(1);
-	usrled1_b				<= not ctrl_reg(0)(2);
-	
-	usrled2_r				<= not ctrl_reg(0)(4);
-	usrled2_g				<= not ctrl_reg(0)(5);
-	usrled2_b				<= not ctrl_reg(0)(6);
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);       
+    --===================================--	
+    
+    --===================================--
+    -- Block responsible for I2C command processing. Is connected to: fast command block, modules.
+    --===================================--
+    command_processor_block: entity work.command_processor_core;
+    --===================================--
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);        
+    --===================================--    
+    
+    --===================================--
+    -- Fast commands. Connected to: physical interface, modules.
+    --===================================--
+    fast_command_block: entity work.fast_command_core;
+    --===================================--
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);        
+    --===================================-- 
+    
+    --===================================--
+    -- Modules generation
+    --===================================--   
+    MOD_GEN : FOR module_i IN 1 TO NUM_MODULES GENERATE
+    --===================================--
+    module_block: entity work.module_core;
+    --===================================--
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);        
+    --===================================--
+    END GENERATE;
+    --===================================--    
+    
+    --===================================--
+    -- Physical interface layer. Connected to: modules (40mhz lines + I2C lines), fast commands, FMC 1&2
+    --===================================--
+    phy_block: entity work.phy_core;
+    --===================================--
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);        
+    --===================================--
+    
+    --===================================--
+    -- BE Data Buffer - Contains Global Event Builder. Connected to: modules
+    --===================================--
+    be_data_buffer_block: entity work.be_data_buffer_core;
+    --===================================--
+    --generic map
+    --(
+    --)
+    --port map
+    --(
+    --);        
+    --===================================--  
+    
 
 end usr;
