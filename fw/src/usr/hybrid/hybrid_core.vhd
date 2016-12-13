@@ -43,6 +43,6 @@ begin
 
     dummy_signal <= '1';
 	
-	--test4
+	--test5
 
 end rtl;
