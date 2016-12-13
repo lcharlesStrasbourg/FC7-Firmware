@@ -42,5 +42,7 @@ architecture rtl of hybrid_core is
 begin
 
     dummy_signal <= '1';
+	
+	--test
 
 end rtl;
