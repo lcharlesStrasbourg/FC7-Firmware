@@ -125,14 +125,20 @@ port
     fmc_l8_gbtclk1_n        : in    std_logic; 
 
     --# fmc mgt
-    fmc_l8_dp_c2m_p         : out   std_logic_vector( 7 downto 0);
-    fmc_l8_dp_c2m_n         : out   std_logic_vector( 7 downto 0);
+--    fmc_l8_dp_c2m_p         : out   std_logic_vector( 7 downto 0);
+--    fmc_l8_dp_c2m_n         : out   std_logic_vector( 7 downto 0);
+--    fmc_l8_dp_m2c_p         : in    std_logic_vector( 7 downto 0);
+--    fmc_l8_dp_m2c_n         : in    std_logic_vector( 7 downto 0);
+--    fmc_l12_dp_c2m_p        : out   std_logic_vector(11 downto 0);
+--    fmc_l12_dp_c2m_n        : out   std_logic_vector(11 downto 0);
+--    fmc_l12_dp_m2c_p        : in    std_logic_vector(11 downto 0);
+--    fmc_l12_dp_m2c_n        : in    std_logic_vector(11 downto 0);
+
     fmc_l8_dp_m2c_p         : in    std_logic_vector( 7 downto 0);
     fmc_l8_dp_m2c_n         : in    std_logic_vector( 7 downto 0);
-    fmc_l12_dp_c2m_p        : out   std_logic_vector(11 downto 0);
-    fmc_l12_dp_c2m_n        : out   std_logic_vector(11 downto 0);
     fmc_l12_dp_m2c_p        : in    std_logic_vector(11 downto 0);
     fmc_l12_dp_m2c_n        : in    std_logic_vector(11 downto 0);
+
     
     --# fmc fabric clk
     fmc_l8_clk0             : in    std_logic; 
@@ -407,12 +413,17 @@ port map
     fmc_l8_gbtclk1_n              => fmc_l8_gbtclk1_n,            
                                   
     --# fmc mgt
-    fmc_l12_dp_c2m_p              => fmc_l12_dp_c2m_p,
-    fmc_l12_dp_c2m_n              => fmc_l12_dp_c2m_n,
+--    fmc_l12_dp_c2m_p              => fmc_l12_dp_c2m_p,
+--    fmc_l12_dp_c2m_n              => fmc_l12_dp_c2m_n,
+--    fmc_l12_dp_m2c_p              => fmc_l12_dp_m2c_p,
+--    fmc_l12_dp_m2c_n              => fmc_l12_dp_m2c_n,
+--    fmc_l8_dp_c2m_p               => fmc_l8_dp_c2m_p,
+--    fmc_l8_dp_c2m_n               => fmc_l8_dp_c2m_n,
+--    fmc_l8_dp_m2c_p               => fmc_l8_dp_m2c_p,
+--    fmc_l8_dp_m2c_n               => fmc_l8_dp_m2c_n,
+
     fmc_l12_dp_m2c_p              => fmc_l12_dp_m2c_p,
     fmc_l12_dp_m2c_n              => fmc_l12_dp_m2c_n,
-    fmc_l8_dp_c2m_p               => fmc_l8_dp_c2m_p,
-    fmc_l8_dp_c2m_n               => fmc_l8_dp_c2m_n,
     fmc_l8_dp_m2c_p               => fmc_l8_dp_m2c_p,
     fmc_l8_dp_m2c_n               => fmc_l8_dp_m2c_n,
 

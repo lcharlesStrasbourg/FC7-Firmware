@@ -40,11 +40,20 @@ set_property IOSTANDARD LVCMOS25 [get_ports {k7_amc_rx_p[14]}]
 set_property PACKAGE_PIN AG22    [get_ports {k7_amc_rx_p[15]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {k7_amc_rx_p[15]}]
 
+#LC
+#set_property PACKAGE_PIN AL23    [get_ports k7_fabric_amc_rx_n03]
+#set_property IOSTANDARD LVCMOS25 [get_ports k7_fabric_amc_rx_n03]
+
+#set_property PACKAGE_PIN AK23    [get_ports k7_fabric_amc_rx_p03]
+#set_property IOSTANDARD LVCMOS25 [get_ports k7_fabric_amc_rx_p03]
+
 set_property PACKAGE_PIN AL23    [get_ports k7_fabric_amc_rx_n03]
-set_property IOSTANDARD LVCMOS25 [get_ports k7_fabric_amc_rx_n03]
+set_property IOSTANDARD LVDS_25 [get_ports k7_fabric_amc_rx_n03]
 
 set_property PACKAGE_PIN AK23    [get_ports k7_fabric_amc_rx_p03]
-set_property IOSTANDARD LVCMOS25 [get_ports k7_fabric_amc_rx_p03]
+set_property IOSTANDARD LVDS_25 [get_ports k7_fabric_amc_rx_p03]
+#LC
+
 
 set_property PACKAGE_PIN AN22    [get_ports k7_fabric_amc_tx_n03]
 set_property IOSTANDARD LVCMOS25 [get_ports k7_fabric_amc_tx_n03]

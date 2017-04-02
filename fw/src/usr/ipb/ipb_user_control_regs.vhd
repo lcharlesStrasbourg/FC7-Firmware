@@ -47,7 +47,8 @@ begin
 	--=============================--
 	begin
 	if reset='1' then
-		regs 	 <= (others=> (others=>'0'));
+		--regs 	 <= (others=> (others=>'0'));
+      	regs(0)(0) 	<= '1'; --sw_reset		
 		ack 	 <= '0';
 	elsif rising_edge(clk) then
 		-- write

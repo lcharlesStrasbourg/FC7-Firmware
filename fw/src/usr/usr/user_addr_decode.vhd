@@ -17,8 +17,9 @@ package body user_addr_decode is
 		variable sel : integer;
 	begin
 		--              addr, "00------------------------------" is reserved (system ipbus fabric)
-		if    std_match(addr, "01000000000000000000000000------") then  	sel := user_ipb_stat_regs;
-		elsif std_match(addr, "01000000000000000000000001------") then  	sel := user_ipb_ctrl_regs;
+		if    std_match(addr, "0100000000000001----------------") then      sel := ipb_daq_system_cnfg_sel;
+        elsif std_match(addr, "0100000000000010----------------") then      sel := ipb_daq_system_ctrl_sel;
+        elsif std_match(addr, "0100000000000011----------------") then      sel := ipb_daq_system_stat_sel;
 		else	
 			sel := 99;
 		end if;

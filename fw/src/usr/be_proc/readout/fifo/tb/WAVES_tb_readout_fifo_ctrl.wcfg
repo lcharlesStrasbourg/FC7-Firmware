@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/VHDL/CMS/14.6/TkFED/FC7/i14.7/tkfed_v1/vhdl/prj_iphc_strasbourg/fc7_tkfed_be/tb_readout_fifo_ctrl_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="external_memory_interface_definitions" />
+            <top_module name="fmc_package" />
+            <top_module name="ipbus" />
+            <top_module name="math_real" />
+            <top_module name="numeric_std" />
+            <top_module name="pkg_tkfed" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tb_readout_fifo_ctrl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/tb_readout_fifo_ctrl/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/sclr_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sclr_i</obj_property>
+      <obj_property name="ObjectShortName">sclr_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/ipb_clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ipb_clk_i</obj_property>
+      <obj_property name="ObjectShortName">ipb_clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/ipb_mosi_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ipb_mosi_i[0:1]</obj_property>
+      <obj_property name="ObjectShortName">ipb_mosi_i[0:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/ipb_miso_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ipb_miso_o[0:1]</obj_property>
+      <obj_property name="ObjectShortName">ipb_miso_o[0:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/from_sw_packet_nb_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">from_sw_packet_nb_i[20:0]</obj_property>
+      <obj_property name="ObjectShortName">from_sw_packet_nb_i[20:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/from_sw_rd_done" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">from_sw_rd_done[1:0]</obj_property>
+      <obj_property name="ObjectShortName">from_sw_rd_done[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/from_sw_data_type_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">from_sw_data_type_i</obj_property>
+      <obj_property name="ObjectShortName">from_sw_data_type_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readoutrelease_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">readoutrelease_i</obj_property>
+      <obj_property name="ObjectShortName">readoutrelease_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/to_sw_rd_rq" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">to_sw_rd_rq[1:0]</obj_property>
+      <obj_property name="ObjectShortName">to_sw_rd_rq[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/packet_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">packet_cnt[1:0]</obj_property>
+      <obj_property name="ObjectShortName">packet_cnt[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/tb_readout_fifo_ctrl/packet_cnt[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">packet_cnt[1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_readout_fifo_ctrl/packet_cnt[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">packet_cnt[0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fullevtbuf_empty_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fullevtbuf_empty_i</obj_property>
+      <obj_property name="ObjectShortName">fullevtbuf_empty_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fullevtbuf_not_empty_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fullevtbuf_not_empty_i</obj_property>
+      <obj_property name="ObjectShortName">fullevtbuf_not_empty_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fullevtbuf_valid_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fullevtbuf_valid_i</obj_property>
+      <obj_property name="ObjectShortName">fullevtbuf_valid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fullevtbuf_rd_en_tmp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fullevtbuf_rd_en_tmp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fullevtbuf_rd_en_tmp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fullevtbuf_data_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fullevtbuf_data_i[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">fullevtbuf_data_i[1343:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/fifo_active" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_active[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_active[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/pkt_nb_size" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">pkt_nb_size</obj_property>
+      <obj_property name="ObjectShortName">pkt_nb_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_wr_data_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_wr_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_wr_data_i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_empty_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_empty_o</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_full_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_full_o</obj_property>
+      <obj_property name="ObjectShortName">fifo_full_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_prog_full_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_prog_full_o</obj_property>
+      <obj_property name="ObjectShortName">fifo_prog_full_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_wr_en_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_wr_en_i</obj_property>
+      <obj_property name="ObjectShortName">fifo_wr_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/readout_fifo_block_i/fifo_data_count_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_data_count_o[15:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_data_count_o[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_readout_fifo_ctrl/readout_fifo0_ctrl_i/state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+</wave_config>
