@@ -283,8 +283,15 @@ port map
 	int_trig_rate_i			=> int_trig_rate --5b	                     
 ); 
 
+----> version1: connect to top
+--cbc3_trigdata 		<= cbc3_trigdata_i;	
+--cbc3_trigdata_valid	<= cbc3_trigdata_valid_i;	
+--cbc3_stubdata 		<= cbc3_stubdata_i;
+--L1A <= L1A_i;
 
-----> version1: test 
+
+
+----> version2: test 
 --data_emul_gen1: for f in 1 to 1 generate --to 16
 --	gen2: for h in 1 to 1 generate
 --		gen3: for c in 1 to 8 generate
@@ -305,15 +312,8 @@ port map
 --end generate;
 --L1A <= int_trig; --L1A_i;
 
---> version2: connect to top
-cbc3_trigdata 		<= cbc3_trigdata_i;	
-cbc3_trigdata_valid	<= cbc3_trigdata_valid_i;	
-cbc3_stubdata 		<= cbc3_stubdata_i;
-L1A <= L1A_i;
 
-
-
-
+----> version3: 
 
 --> TODO; problem with  ctrl registers!!!
 
@@ -329,53 +329,53 @@ L1A <= L1A_i;
 --[15:8]: stub2
 --[7:0]: stub1
 
---data_emul_gen1: for f in 1 to 1 generate --to 16
---	gen2: for h in 1 to 1 generate
---		gen3: for c in 1 to 8 generate
---			--trigdata	
---			cbc3_trigdata_emul(f)(h)(c) <= (others => '1');
---			--stubdata			
---			cbc3_trigdata_emul(f)(h)(c)(39 downto 36) 	<= "1010";
---			cbc3_trigdata_emul(f)(h)(c)(35 downto 32) 	<= "0011";	--bend3		
---			cbc3_trigdata_emul(f)(h)(c)(31 downto 28) 	<= "0010";	--bend2
---			cbc3_trigdata_emul(f)(h)(c)(27 downto 24) 	<= "0001";	--bend1
---			cbc3_trigdata_emul(f)(h)(c)(23 downto 16) 	<= x"33";	--stub3		
---			cbc3_trigdata_emul(f)(h)(c)(15 downto 8) 	<= x"22";	--stub2
---			cbc3_trigdata_emul(f)(h)(c)(7 downto 0) 	<= x"11";	--stub1
---			--
---			cbc3_trigdata_valid_emul(f)(h)(c) <= int_trig;			
---		end generate;
---	end generate;
---end generate;	
+data_emul_gen1: for f in 1 to 1 generate --to 16
+	gen2: for h in 1 to 1 generate
+		gen3: for c in 1 to 8 generate
+			--trigdata	
+			cbc3_trigdata_emul(f)(h)(c) <= (others => '1');
+			--stubdata			
+			cbc3_stubdata_emul(f)(h)(c)(39 downto 36) 	<= "1010";
+			cbc3_stubdata_emul(f)(h)(c)(35 downto 32) 	<= "0011";	--bend3		
+			cbc3_stubdata_emul(f)(h)(c)(31 downto 28) 	<= "0010";	--bend2
+			cbc3_stubdata_emul(f)(h)(c)(27 downto 24) 	<= "0001";	--bend1
+			cbc3_stubdata_emul(f)(h)(c)(23 downto 16) 	<= x"33";	--stub3		
+			cbc3_stubdata_emul(f)(h)(c)(15 downto 8) 	<= x"22";	--stub2
+			cbc3_stubdata_emul(f)(h)(c)(7 downto 0) 	<= x"11";	--stub1
+			--
+			cbc3_trigdata_valid_emul(f)(h)(c) <= int_trig;			
+		end generate;
+	end generate;
+end generate;	
 
 
---data_sel_proc:process
---begin
---wait until rising_edge(clk_i);
---	if	data_type = "0000" then --by def, from PHY
---		cbc3_trigdata 		<= cbc3_trigdata_i;		
---		cbc3_stubdata 		<= cbc3_stubdata_i;
---	elsif data_type = "0001" then 
---		cbc3_trigdata 		<= cbc3_trigdata_emul;		
---		cbc3_stubdata 		<= cbc3_stubdata_emul;
---	else
---		null;
---	end if;
---end process;
+data_sel_proc:process
+begin
+wait until rising_edge(clk_i);
+	if	data_type = "0000" then --by def, data from PHY
+		cbc3_trigdata 		<= cbc3_trigdata_i;		
+		cbc3_stubdata 		<= cbc3_stubdata_i;
+	elsif data_type = "0001" then --internal emul
+		cbc3_trigdata 		<= cbc3_trigdata_emul;		
+		cbc3_stubdata 		<= cbc3_stubdata_emul;
+	else
+		null;
+	end if;
+end process;
 
---trigger_sel_proc: process
---begin
---wait until rising_edge(clk_i);
---	if trigger_type = "0000" then --by def, L1A from user part (TTC or another one)
---		L1A <= L1A_i;
---		cbc3_trigdata_valid <= cbc3_trigdata_valid_i;		
---	elsif trigger_type = "0001" then
---		L1A <= int_trig;			
---		cbc3_trigdata_valid <= cbc3_trigdata_valid_emul;
---	else
---		null;	
---	end if;
---end process;
+trigger_sel_proc: process
+begin
+wait until rising_edge(clk_i);
+	if trigger_type = "0000" then --by def, L1A from user part (TTC or another one)
+		L1A <= L1A_i;
+		cbc3_trigdata_valid <= cbc3_trigdata_valid_i;		
+	elsif trigger_type = "0001" then
+		L1A <= int_trig;			
+		cbc3_trigdata_valid <= cbc3_trigdata_valid_emul;
+	else
+		null;	
+	end if;
+end process;
 
 
 
